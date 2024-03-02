@@ -178,19 +178,68 @@ else:
     print("Neplatná volba")
 print("Děkuji za použití kalkulačky, aplikaci ukončíte libovolnou klávesou.")
 
+print("No pod")
+pokracovat = "ano"
+while (pokracovat == "ano"):
+    a = float(input("zadaj prve cislo"))
+    b = float(input("zadaj druhe cislo"))
+    print("Zvolte si operaci:")
+    print("1 - sčítání")
+    print("2 - odčítání")
+    print("3 - násobení")
+    print("4 - dělení")
+    vysledok = 0.0
+    volba = int(input())
+    match volba:
+        case 1:
+            vysledok = a + b
+        case 2:
+            vysledok = a - b
+        case 3:
+            vysledok = a * b
+        case 4:
+            if b != 0:
+                vysledok = a / b
+            else:
+                print("Nemozes delit 0")
+                vysledok = "N/A"
+
+    if volba > 0 and volba < 5:
+        print(f"vysledok {vysledok}")
+    else:
+        print("Zadal si cislo out of enumeration")
+    pokracovat = input("Chces pokracovat [ano/nie]")
+print("Děkuji za použití kalkulačky, aplikaci ukončíte libovolnou klávesou.")
+
+
+# Lists
+
+cisla = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # manually created list
+print(cisla[3])
+cisla[5] = 60
+print(cisla[5])
+
+cisla= list(range(1, 11))
+for cislo in cisla:
+    cislo += 1
+print(cisla)
+
+for i in range(len(cisla)):
+    cisla[i] /= 0.5
+    print(cisla[i])
+print()
+print(f"cisla {cisla}, \n")
+
+# enumerate
+
 """
 
+simpsons = ["mam", "dad", "son", "daugther"]
 
 
-
-
-
-
-
-
-
-
-
+for index, value in enumerate(simpsons):
+    print(f"index and list of values {index} and {value}")
+print("gadzo")
 
 
 
