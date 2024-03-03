@@ -232,25 +232,84 @@ print(f"cisla {cisla}, \n")
 
 # enumerate
 
-"""
 
-simpsons = ["mam", "dad", "son", "daugther"]
 
 
 for index, value in enumerate(simpsons):
     print(f"index and list of values {index} and {value}")
 print("gadzo")
 
+zoznam = ["martin", "ivan", "alojz", "simon"]
+cisla= [1,3,6,9,]
 
+for i in range(len(cisla)):
+    i = i+4
+    print(i)
+    print(cisla)
 
+simpsons = ["mam", "dad", "son", "daugther"]
 
+cisla = range(5)
 
+print(list(cisla))
+print(list(cisla[0:5]))
+print(list(cisla[2:8]))
+print(list(cisla[1:7:2]))
+print(list(cisla[::2]))
+print(list(cisla[6:]))
 
+for i in cisla:
+    print(cisla[i])
 
+# string methods
 
+cisla = range(10)
+cisla2 = [1, 2, 3, 4]
+cisla2.append(14)   # append method
+print(cisla2)
+print(cisla2[1])
+print(cisla2[4])
 
+cisla2.insert(-2, 34)   # insert method
+print(cisla2)
 
+cisla2.extend(cisla)    # extend method
+print(cisla2)
 
+cisla2.clear()  # clear method
+print(cisla2)
 
+del cisla2[:]   # clear command
+print(cisla2)
+
+cisla2 = [1, 2, 3, 4]
+cisla2.remove(2)    # remove method
+print(cisla2)
+
+cisla2 = [23, 4545, 46675, 0.8778787, 23]
+cisla2.reverse()    # reverse method
+print(cisla2)
+
+pocet = cisla2.count(23)    # count method
+print(pocet)
+
+simpsons = ["mam", "dad", "son", "daugther"]
+
+for i in simpsons:
+    simpsons.sort()     # sort method
+print(simpsons)
+
+simpsons = ["Homer", "Marge", "Bart", "Lisa", "Maggie"]
+simpson = input("Ahoj, zadej svého oblíbeného Simpsona (z rodiny Simpsonů): ")
+if simpson in simpsons:
+    pozice = simpsons.index(simpson)    # index method
+    print(f"Muj nejoblibenejsi simpson {pozice+1}")
+else:
+    print("Pozice nenalezena")
+
+"""
+
+smes = [1, "Ahoj", 3.14, [1, 2, 3]] # different data types
+print(smes)
 
 
