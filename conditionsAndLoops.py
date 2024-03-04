@@ -307,9 +307,211 @@ if simpson in simpsons:
 else:
     print("Pozice nenalezena")
 
-"""
-
 smes = [1, "Ahoj", 3.14, [1, 2, 3]] # different data types
 print(smes)
+
+print("a" < "b")
+print("b" < "a")
+print("c" == "c")
+print("ab" >= "a")
+print("e" <= "df")
+print("java" == "javascript")
+print("python" != "php")
+
+mesto = "Honolulu"
+print(mesto[2:10:2])  # string printing
+
+mesto = "Honolulu"
+print(mesto.count("o",0,12))    # count function
+
+retazec = "Wolfgang Amadeus Mozart"
+
+print(retazec.find("Wolfgang")) # find method
+print(retazec.index("W"))   # index (throw exception if find nothing)
+
+retezec = "Wolfgang Amadeus Mozart"
+print(retezec.find("Wolfgang"))
+try:
+    print(retezec.index("Beethoven"))
+except ValueError:
+    print("Podřetězec nebyl nalezen!")
+
+martin = "meno921"
+martinBezCislic = "meno"
+
+print(martin.isalpha())     # isAlpha method
+print(martinBezCislic.isalpha())    # is Alpha method
+
+prvni_retezec = "123"
+print(prvni_retezec.isdigit())  # isDigit method
+druhy_retezec = "boeing737"
+print(druhy_retezec.isdigit())  # isDigit method
+
+prvni_retezec = "arizona"
+print(prvni_retezec.islower())  # isLower
+druhy_retezec = "AriZona"
+print(druhy_retezec.islower())  # isLower
+
+prvni_retezec = "ARIZONA"
+print(prvni_retezec.isupper())  # isUpper
+druhy_retezec = "arizona"
+print(druhy_retezec.isupper())  # isUpper
+
+print("Program is finding characters of all kind")
+retazec = input("Input string")
+retazec = retazec.lower()
+#  Nastavíme výchozí počty proměnných
+samohlasky = 0
+souhlasky = 0
+ostatni = 0
+cisel = 0
+
+samohlasky_sada = "aáeéěiíoóuúůyý"
+souhlasky_sada = "bcčdďfghjklmnňpqrřsštťvwxzž"
+cisla_sada = "0123456789"
+
+for znak in retazec:
+    if znak in souhlasky_sada:
+        souhlasky += 1
+    elif znak in samohlasky_sada:
+        samohlasky += 1
+    elif znak in cisla_sada:
+        cisel += 1
+    else:
+        ostatni += 1
+
+print(f"Pocet samohlasok {souhlasky}")
+print(f"Pocet spoluhlasok {samohlasky}")
+print(f"Pocet ostatnych {ostatni}")
+print(f"Pocet cisel {cisel}")
+
+input("\nAplikaci ukončíte stisknutím klávesy Enter...")
+
+print(ord("a")) # ord method to convert chars to digits
+print(chr(97))  # chr method to convert digits to chars
+
+# Caesar cipher
+retezec = "gaiusjuliuscaesar"
+print("Povodna sprava ", retezec)
+sifrovanaSprava = ""
+posun = 1
+
+for znak in retezec:
+    ciselnaHodnota = ord(znak)
+    ciselnaHodnota += posun
+    if (ciselnaHodnota > ord("z")):
+        ciselnaHodnota = ciselnaHodnota - 26
+    sifrovanaSprava += chr(ciselnaHodnota)
+
+print("Zasifrovana sprava ", sifrovanaSprava)
+
+zprava = "Už toho v Pythonu umím docela dost."
+x = zprava.split()  # split method
+sadf = len(x)
+print(x)
+print(sadf)
+
+mojeParta = ["Ivan", "Simon", "DruhySimon"]
+x = ",".join(mojeParta).replace(",","") # join method
+print(x)
+
+# řetězec, který chceme dekódovat
+sifrovana_zprava = ".-.. . --- -. .- .-. -.. ---"
+print(f"Původní zpráva: {sifrovana_zprava}")
+# řetězec s dekódovanou zprávou
+zprava = ""
+
+# vzorové seznamy
+abecedni_znaky = "abcdefghijklmnopqrstuvwxyz"
+morseovy_znaky = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....",
+"..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-",
+"...-", ".--", "-..-", "-.--", "--.."]
+
+# rozbití řetězce na znaky morzeovky
+znaky = sifrovana_zprava.split(" ")
+
+# iterace znaky morzeovky
+for morseuv_znak in znaky:
+    abecedni_znak = "?"
+    try:
+        index = morseovy_znaky.index(morseuv_znak)
+        abecedni_znak = abecedni_znaky[index]
+        zprava += abecedni_znak
+    except ValueError: # znak nenalezen
+        zprava += abecedni_znak
+print(f"Dekódovaná zpráva je: {zprava}")
+
+# ternary in python
+
+muz = True # nějaká proměnná udávající pohlaví
+nazev_pohlavi =  "muž" if (muz) else "žena"
+print(nazev_pohlavi)
+
+vek = 33
+tvojVek = "zletilý" if(vek >= 18) else "nezletilý"
+print(tvojVek)
+
+smajlik = ":)"
+nalada = "vesely" if (smajlik == ":)") else "sdfsdf"
+print(nalada)
+
+smajlik = ":("
+nalada = "veselý" if smajlik == ":)" else "smutný" if smajlik == ":(" else "neznámý"
+print(nalada)
+
+desiredQuarter = 11 # match with shorten log
+match desiredQuarter:
+    case 1 | 2 | 3:
+        print("First quarter")
+    case 4 | 5 | 6:
+        print("Second quarter")
+    case 7 | 8 | 9:
+        print("Third qurter")
+    case 10 | 11 | 12:
+        print("Fourth quarter")
+
+retazec = " sfdsfsfdsdfsd sfdsf sfs "
+pocetZnakov = len(retazec)
+print(pocetZnakov)
+
+for znak in retazec:
+    if znak == " ":
+        continue
+    print(znak ,end=" ")
+print()
+
+# break statement
+seznamOvoce = ["jabko", "hruska", "malina", "kastrat"]
+hledanyIntex = -1
+for ovocie in seznamOvoce:
+    if len(ovocie) > 5:
+        hledanyIntex = seznamOvoce.index(ovocie)
+        break
+if hledanyIntex >= 0:
+    print("prve ovocie vacisa ako 5 znakov je", seznamOvoce[hledanyIntex])
+else:
+    print("Ovocie s dlzkou viac ako 5 znakov neexistuje")
+
+# continue statement
+cisla_retezec = "10,50,abcd,30,9"
+cisla_zoznam = cisla_retezec.split(",")
+soucet = 0
+
+for cislo in cisla_zoznam:
+    if not cislo.isdigit():
+        continue
+    else:
+        soucet += int(cislo)
+
+print(f"sucet cisel je {soucet}")
+
+"""
+
+
+
+
+
+
+
 
 
