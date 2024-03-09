@@ -215,4 +215,30 @@ import copy as cp
 # print(puvodni_kostka)
 # print(kopie_kostky)
 
+class Kostka:
+    """
+    Třída reprezentuje hrací kostku.
+    """
 
+    def __init__(self, pocetSten=6):
+        self.__pocet_sten = pocetSten     # jedno podtržítko dává najevo, že nechceme, aby se k atributu přistupovalo přímo
+
+    def vrat_pocet_sten(self):
+        """
+        Vrátí počet stěn kostky.
+        """
+        return self.__pocet_sten
+
+    def hod(self):
+        """
+        Vykoná hod kostkou a vrátí číslo od 1 do
+        počtu stěn.
+        """
+        import random as _random
+        return _random.randint(1, self.__pocet_sten)
+
+    def __str__(self):
+        """
+        Vrací textovou reprezentaci kostky.
+        """
+        return str(f"Kostka s {self.__pocet_sten} stenami.")
