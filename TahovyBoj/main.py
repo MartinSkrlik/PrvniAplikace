@@ -1,9 +1,13 @@
-from bojovnik import Bojovnik
+
 from kostka import Kostka
+from bojovnik import Bojovnik
+from arena import Arena
 
-kostka = Kostka()
-bojovnik = Bojovnik("Zalgoren", 100, 20, 10, kostka)
+# vytvoření objektů
+kostka = Kostka(10)
+zalgoren = Bojovnik("Zalgoren", 100, 20, 10, kostka)
+shadow = Bojovnik("Shadow", 60, 18, 15, kostka)
+arena = Arena(zalgoren, shadow, kostka)
 
-print(f"Bojovnik {bojovnik}")
-print(f"Nazivu {bojovnik.jeNazivu()}")
-print(f"Zivot {bojovnik.grafickyZivot()}")
+# zápas
+arena.zapas()
