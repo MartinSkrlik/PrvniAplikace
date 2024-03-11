@@ -65,7 +65,6 @@ y = "sdfsdf"
 if type(y) == str:
     print("y je řetězec")   # funkcia type na zistovanie typu objektu
 
-
 class Rodic:
     pass
 
