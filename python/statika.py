@@ -135,14 +135,50 @@ import math
 #     def vrat_hodnotu(cls):
 #         return cls.hodnota
 #
-#     @staticmethod
-#     def staticka_metoda():
-#         return "Jsem statická metoda, zůstanu stejná i pokud mě někdo zdědí."
+#     def statickametoda(self):
+#         return self.hodnota
 #
 # class Potomek(Ridic):
 #     hodnota = "Jsem potomek, ne rodič."
 #
+#
 # print(Potomek.vrat_hodnotu())
-# print(Ridic.staticka_metoda())
+# print(Potomek.statickametoda)
 
 
+# class Uzivatel:
+#     minimalni_delka = 6
+#
+#     def __init__(self, jmeno, heslo):
+#         self._jmeno = jmeno
+#         self._heslo = heslo
+#
+#     @staticmethod
+#     def zvaliduj_heslo(heslo):
+#         return len(heslo) >= Uzivatel.minimalni_delka
+#
+#     @classmethod
+#     def nastav_minimalni_delka_hesla(cls, nova_delka):
+#         cls.minimalni_delka = nova_delka
+#
+#     def je_heslo_validni(self):
+#         return self.zvaliduj_heslo(self._heslo)
+#
+# class VIPuzivatel(Uzivatel):
+#     minimalni_delka = 10
+#
+#     @staticmethod
+#     def zvaliduj_heslo(heslo):
+#         return len(heslo) >= VIPuzivatel.minimalni_delka
+#     @classmethod
+#     def informace_o_hesle(cls):
+#         return f"Minimální délka hesla pro {cls.__name__} je {cls.minimalni_delka} znaků."
+#
+# tomas = Uzivatel('Tomas', 'motyka')
+# petr = VIPuzivatel('Peter', 'veslo12')
+#
+# print(tomas.zvaliduj_heslo('test'))
+# print(petr.informace_o_hesle())
+#
+# print(tomas.je_heslo_validni())
+# print(petr.je_heslo_validni())
