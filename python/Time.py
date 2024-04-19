@@ -81,5 +81,93 @@ import calendar
 # je_prestupny = calendar.leapdays(2000,2025) # zisti kolko prestypnych rokov bolo medzi dvoma rokmi
 # print(je_prestupny)
 
+from datetime import datetime
 
+# datum = datetime(2023, 12, 12) # funkce datetime
+# print(datum) # 2023-12-12 00:00:00
+#
+# cas = datetime.now() # funkce now
+# print(cas)
+# print(f"{cas.hour}")
+# print(f"{cas.minute}")
+# print(f"{cas.day}")
 
+# dnes = datetime.now()
+# dny_v_tydnu = ["pondelok", "utorok", "streda", "strvrtok", "piatok", "sobota", "nedela"]
+# den = dny_v_tydnu[dnes.weekday()] # funkcia weekday
+# print(den)
+# print(dnes.weekday()) # vrati den v tyzdni ako cislo
+
+# dnes = datetime.now()
+# vtedy = datetime(2023, 12, 12) # zistit cas medzi obdobim
+# cas = dnes - vtedy
+# print(cas)
+
+# dnes = datetime.now()
+#
+# zmena_roku = dnes.replace(year = dnes.year + 1)
+# zmena_dne = dnes.replace(day =  dnes.day + 1)
+#
+# print(f"Přidáme rok navíc a budeme mít rok {zmena_roku.year}.")
+# print(f"Přidáme den navíc a budeme mí {zmena_dne.day}.{dnes.month}.")
+
+# def pridat_casove_razitko(func):
+#     # Dekorátor, který přidává časové razítko k výstupu funkce
+#     def zaznamenat_zpravu(zprava):
+#         cas = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#         return func(f"[{cas}] {zprava}")
+#     return zaznamenat_zpravu
+#
+# @pridat_casove_razitko
+# def zapsat_do_deniku(zprava):
+#     # Zapisuje zprávu do deníku s časovým razítkem
+#     print(zprava)
+#
+# # Použití dekorované funkce
+# zapsat_do_deniku("Přihlásit se na školení ITnetwork")
+
+# def zapis_data():
+#     return "Zapisuji data do databáze."
+#
+# def povol_zapis():
+#     return zapis_data      # vrací funkci zapis_data, ne její výsledek
+#
+# vysledek = povol_zapis()    # do proměnné výsledek vkládáme obsah funkce povol_zapis(), což je reference na funkci zapis_data()
+# print(vysledek)         # dostaneme pouze referenci na funkci zapis_data
+# print(vysledek())
+
+import time
+
+def vypocet_objemu_krychle(func):
+    def vypocet_objemu_a_obsahu(*args, **kwargs):
+        obsah = func(*args, **kwargs)
+        objem = obsah * args[0]
+        print(f"Obsah čtverce se stranou {args[0]} je: {obsah}")
+        print(f"Objem krychle se stranou {args[0]} je: {objem}")
+        return obsah
+    return vypocet_objemu_a_obsahu
+
+def validuj_vstup(func):
+    def over_data(*args, **kwargs):
+        if any(arg <= 0 for arg in args):
+            print("Varování: Všechny argumenty musí být kladné a nenulové.")
+        return func(*args, **kwargs)
+    return over_data
+
+def zmer_cas(func):
+    def zmer_a_vypis_cas(*args, **kwargs):
+        zacatek = time.time()
+        vysledek = func(*args, **kwargs)
+        konec = time.time()
+        print(f"Čas běhu funkce obsah_ctverce(): {konec - zacatek:.5f} sekund.")
+        return vysledek
+    return zmer_a_vypis_cas
+
+@validuj_vstup
+@zmer_cas
+@vypocet_objemu_krychle
+def obsah_ctverce(a):
+    time.sleep(1)  # na sekundu zdržíme běh programu, jinak je tak rychlý, že bychom dostali čas běhu nulový.
+    return a**2
+
+obsah_ctverce(3)
