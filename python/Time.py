@@ -136,38 +136,64 @@ from datetime import datetime
 # print(vysledek)         # dostaneme pouze referenci na funkci zapis_data
 # print(vysledek())
 
-import time
+# import time
+#
+# def vypocet_objemu_krychle(func):
+#     def vypocet_objemu_a_obsahu(*args, **kwargs):
+#         obsah = func(*args, **kwargs)
+#         objem = obsah * args[0]
+#         print(f"Obsah čtverce se stranou {args[0]} je: {obsah}")
+#         print(f"Objem krychle se stranou {args[0]} je: {objem}")
+#         return obsah
+#     return vypocet_objemu_a_obsahu
+#
+# def validuj_vstup(func):
+#     def over_data(*args, **kwargs):
+#         if any(arg <= 0 for arg in args):
+#             print("Varování: Všechny argumenty musí být kladné a nenulové.")
+#         return func(*args, **kwargs)
+#     return over_data
+#
+# def zmer_cas(func):
+#     def zmer_a_vypis_cas(*args, **kwargs):
+#         zacatek = time.time()
+#         vysledek = func(*args, **kwargs)
+#         konec = time.time()
+#         print(f"Čas běhu funkce obsah_ctverce(): {konec - zacatek:.5f} sekund.")
+#         return vysledek
+#     return zmer_a_vypis_cas
+#
+# @validuj_vstup
+# @zmer_cas
+# @vypocet_objemu_krychle
+# def obsah_ctverce(a):
+#     time.sleep(1)  # na sekundu zdržíme běh programu, jinak je tak rychlý, že bychom dostali čas běhu nulový.
+#     return a**2
+#
+# obsah_ctverce(3)
 
-def vypocet_objemu_krychle(func):
-    def vypocet_objemu_a_obsahu(*args, **kwargs):
-        obsah = func(*args, **kwargs)
-        objem = obsah * args[0]
-        print(f"Obsah čtverce se stranou {args[0]} je: {obsah}")
-        print(f"Objem krychle se stranou {args[0]} je: {objem}")
-        return obsah
-    return vypocet_objemu_a_obsahu
+list = ["a","a", 2, 2, 5] # list
+for i in list:
+    print(i)
+    print(list[0])
 
-def validuj_vstup(func):
-    def over_data(*args, **kwargs):
-        if any(arg <= 0 for arg in args):
-            print("Varování: Všechny argumenty musí být kladné a nenulové.")
-        return func(*args, **kwargs)
-    return over_data
+thistuple = ("apple", "banana", "cherry", "apple", "cherry") # tuple, the same like list but can have duplicates and itmes cannot be added or deleted.
+for i in thistuple:
+    print(i)
 
-def zmer_cas(func):
-    def zmer_a_vypis_cas(*args, **kwargs):
-        zacatek = time.time()
-        vysledek = func(*args, **kwargs)
-        konec = time.time()
-        print(f"Čas běhu funkce obsah_ctverce(): {konec - zacatek:.5f} sekund.")
-        return vysledek
-    return zmer_a_vypis_cas
+thisset = {"apple", "banana", "cherry", "cherry","cherry"} # set is urordered, ignore duplicates,
+print(thisset)
+for i in thisset:
+    print(i)
 
-@validuj_vstup
-@zmer_cas
-@vypocet_objemu_krychle
-def obsah_ctverce(a):
-    time.sleep(1)  # na sekundu zdržíme běh programu, jinak je tak rychlý, že bychom dostali čas běhu nulový.
-    return a**2
+thisdict = {    # dictionaries using key value pairs
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+print(len(thisdict))
 
-obsah_ctverce(3)
+
+
+
