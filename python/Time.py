@@ -172,28 +172,77 @@ from datetime import datetime
 #
 # obsah_ctverce(3)
 
-list = ["a","a", 2, 2, 5] # list
-for i in list:
+# built-in data types for collection data
+
+# list = ["a","a", 2, 2, 5] # list
+# for i in list:
+#     print(i)
+#     print(list[0])
+#
+# thistuple = ("apple", "banana", "cherry", "apple", "cherry") # tuple, the same like list but can have duplicates and itmes cannot be added or deleted.
+# for i in thistuple:
+#     print(i)
+#
+# thisset = {"apple", "banana", "cherry", "cherry","cherry"} # set is urordered, ignore duplicates,
+# print(thisset)
+# for i in thisset:
+#     print(i)
+#
+# thisdict = {    # dictionaries using key value pairs
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# print(thisdict["brand"])
+# print(len(thisdict))
+
+# i = 1 # loop with while
+# while i < 6:
+#   print(i)
+#   i += 1
+
+# i = 1 # loop with while and break
+# while i < 6:
+#   print(i)
+#   if i == 3:
+#     break
+#   i += 1
+#
+#
+# ako = 1 # loop with while and break
+# while ako < 6:
+#     print(ako)
+#     if ako == 3:
+#         break
+#     ako += 1
+
+# i = 1 # loop with while and break
+# while i < 6:
+#   i += 1
+#   if i == 3:
+#     continue
+#   print(i)
+
+# fruits = ["banana", "grape" , "apple" , "orange"]   # for loop with continue
+# for i in fruits:
+#   print(i)
+#   if i == "banana":
+#     continue
+
+# fruits = ["banana", "grape" , "apple" , "orange"]   # for loop with break
+# for i in fruits:
+#   print(i)
+#   if i == "banana":
+#     break
+
+# fruits = ["apple", "banana", "cherry"]  # for with break, before print
+# for x in fruits:
+#   if x == "banana":
+#     break
+#   print(x)
+
+# for x in range(6): # range using in loop
+#   print(x)
+
+for i in range(1, 8, 2):
     print(i)
-    print(list[0])
-
-thistuple = ("apple", "banana", "cherry", "apple", "cherry") # tuple, the same like list but can have duplicates and itmes cannot be added or deleted.
-for i in thistuple:
-    print(i)
-
-thisset = {"apple", "banana", "cherry", "cherry","cherry"} # set is urordered, ignore duplicates,
-print(thisset)
-for i in thisset:
-    print(i)
-
-thisdict = {    # dictionaries using key value pairs
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-print(thisdict["brand"])
-print(len(thisdict))
-
-
-
-
