@@ -244,5 +244,197 @@ from datetime import datetime
 # for x in range(6): # range using in loop
 #   print(x)
 
-for i in range(1, 8, 2):
-    print(i)
+# for i in range(1, 8, 2):
+#     print(i)
+
+# adj = ["red", "big", "tasty"]
+# fruits = ["apple", "banana", "cherry"]
+#
+# for x in adj:   # nested loop
+#   for y in fruits:
+#     print(x, y)
+
+# meno = ["martin", "Ivan", "Peter", "Simon"]
+# priezviesko = ["Petrovicky", "Novak", "Bajza", "Skrlik"]
+# status = ["slobodny", "zenaty", "mastny", "nechcecny"]
+#
+# for x in meno:
+#     for y in priezviesko:
+#         for z in status:
+#             print(x,y,z)
+
+# def funkcia(parameter1, parameter2):    # two arguments
+#     print(parameter1 + " sfsdf" + parameter2)
+#
+# funkcia("peto", "mato")
+
+# def function2(*param):  # non defined count of parameters
+#     print(param[2])
+#
+# function2("ako", "mako", "pako", "tak")
+
+
+# def my_function(child3, child2, child1):    # kwargs arguments using as "key = value" duo
+#     print("The youngest child is " + child3)
+#
+# my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+
+# def my_function(**kid): # kwargs** using as key=value duo with not knowing how meny arguments has function
+#   print("His last name is " + kid["lname"])
+#
+# my_function(fname = "Tobias", lname = "Refsnes", mname = "Jebo")
+
+# def my_function(country = "Norway"):    # default value in function, it is printed if function has no argument
+#   print("I am from " + country)
+#
+# my_function("Sweden")
+# my_function("India")
+# my_function()
+# my_function("Brazil")
+
+# def my_function(food):  #  list as argument in python fuction can be used
+#   for x in food:
+#     print(x)
+# fruits = ["apple", "banana", "cherry"]
+# my_function(fruits)
+
+# def function4(food):
+#     for x in food:
+#         print(x)
+# food = ["jabko", "pomaranc", "citron"]
+# function4(food)
+
+# def my_function(x): # function can return value, not argument
+#   return 5 * x
+#
+# print(my_function(3))
+# print(my_function(5))
+# print(my_function(9))
+
+# def function6():    # empty function with no return value or parameter
+#     pass
+
+# def my_function(x): # '/' is using to reject using keyword argument
+#   print(x)
+#
+# my_function(x = 3)
+#
+# def my_function(x, /): # '/' is using to reject using keyword argument
+#   print(x)
+#
+# my_function(x = 3)
+
+
+# def my_function(a, b, /, *, c, d):  #  you can add together '/' or '*' to set which parameters shoud be positioned or keywords
+#   print(a + b + c + d)
+#
+# my_function(5, 6, c = 7, d = 8)
+
+# def tri_recursion(k):   # recursion (function calling itself)
+#   if(k > 0):
+#     result = k + tri_recursion(k - 1)
+#     print(result)
+#   else:
+#     result = 0
+#   return result
+#
+# print("\n\nRecursion Example Results")
+#
+# tri_recursion(2)
+
+# d = lambda x : x + 10   # lambda is small anonymous function with any numbers of parameters but inly one expression
+# print(d(5))
+# x = lambda a, b : a * b
+# print(x(5, 6))
+# x = lambda a, b, c : a + b + c
+# print(x(5, 6, 2))
+
+# def myfunc(n):
+#   return lambda a : a * n
+#
+# mydoubler = myfunc(2)
+#
+# print(mydoubler(11))
+# print(myfunc(5))
+
+# def myfunc(n):    # anonymous function is called also lambda function ()
+#   return lambda a : a * n
+#
+# mydoubler = myfunc(2)
+# mytripler = myfunc(3)
+#
+# print(mydoubler(11))
+# print(mytripler(11))
+
+import array
+
+# importing "array" for array creations
+# import array as arr
+#
+# # creating an array with integer type
+# a = arr.array('i', [1, 2, 3])   # array in python
+# print(type(a))
+# for i in a:
+#     print(i, end=" ")
+
+
+# class MyClass:      # create class
+#     x = 5
+# p1 = MyClass    # create object
+# print(p1.x)
+
+# class Person:   # class/object/example/init function
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         ako = 7
+# p1 = Person("John", 36)
+# print(p1.name)
+# print(p1.age)
+#
+# class Person:   #  class/method/init function
+#   def __init__(self, name, age):
+#     self.name = name
+#     self.age = age
+#   def myfunc(self):
+#     print("Hello my name is " + self.name)
+# p1 = Person("John", 36)
+# p1.myfunc()
+
+# class Person:
+#   def __init__(self, name, age):
+#     self.name = name
+#     self.age = age
+#   def __str__(self):
+#     return f"{self.name}({self.age})"
+# p1 = Person("John", 36)
+# print(p1)
+# p1.name = "Mathiew"     # change object properties
+# print(p1)
+# del p1.name     # delete object properties
+# print(p1)
+# del p1  # delete object itself
+
+class Person:   #  parent class to be inherit from
+  def __init__(self, firstname, lastname):
+    self.firstname = firstname
+    self.lastname = lastname
+
+  def printName(self):
+    print(self.firstname, self.lastname)
+
+ako = Person("martin", "skrlik")
+ako.printName()
+
+class Student(Person):  #  child class, inherited from parent (Person) class
+  def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)   #  add 'super().' causing inheritence from parent (Person) class
+    self.graduationyear = year    #   adding property graduationyear and set to 34
+
+  def welcome(self):
+    print("Welcome"+ self.firstname, self.lastname + "to the class of" + self.graduationyear)
+
+object = Student("mike", "bowel", "1970")
+print(object.graduationyear)
+object.printName()
+object.welcome()
