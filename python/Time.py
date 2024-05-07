@@ -415,27 +415,180 @@ import array
 # print(p1)
 # del p1  # delete object itself
 
-class Person:   #  parent class to be inherit from
-  def __init__(self, firstname, lastname):
-    self.firstname = firstname
-    self.lastname = lastname
+# class Person:   #  parent class to be inherit from
+#   def __init__(self, firstname, lastname):
+#     self.firstname = firstname
+#     self.lastname = lastname
+#
+#   def printName(self):
+#     print(self.firstname, self.lastname)
+#
+# ako = Person("martin", "skrlik")
+# ako.printName()
+#
+# class Student(Person):  #  child class, inherited from parent (Person) class
+#   def __init__(self, fname, lname, year):
+#     super().__init__(fname, lname)   #  add 'super().' causing inheritence from parent (Person) class
+#     self.graduationyear = year    #   adding property graduationyear and set to 34
+#
+#   def welcome(self):
+#     print("Welcome"+ self.firstname, self.lastname + "to the class of" + self.graduationyear)
+#
+# object = Student("mike", "bowel", "1970")
+# print(object.graduationyear)
+# object.printName()
+# object.welcome()
 
-  def printName(self):
-    print(self.firstname, self.lastname)
+# mystr = "banana"
+# myit = iter(mystr)
+#
+# print(next(myit))
+# print(next(myit))
+# print(next(myit))
+# print(next(myit))
+# print(next(myit))
+# print(next(myit))
 
-ako = Person("martin", "skrlik")
-ako.printName()
+# myTuple = ("lemoon", "orange" ,"banana")
+# typle = iter(myTuple)
+#
+# print(next(typle))
+# print(next(typle))
+# print(next(typle))
 
-class Student(Person):  #  child class, inherited from parent (Person) class
-  def __init__(self, fname, lname, year):
-    super().__init__(fname, lname)   #  add 'super().' causing inheritence from parent (Person) class
-    self.graduationyear = year    #   adding property graduationyear and set to 34
+# mystr = "bandfdsfsdfsdfana"
+#
+# for x in mystr:
+#   print(x)
 
-  def welcome(self):
-    print("Welcome"+ self.firstname, self.lastname + "to the class of" + self.graduationyear)
 
-object = Student("mike", "bowel", "1970")
-print(object.graduationyear)
-object.printName()
-object.welcome()
+# class myNumbers:
+#     def __iter__(self):
+#         self.a = 1
+#         return self
+#
+#     def __next__(self):
+#         x = self.a
+#         self.a += 1
+#         return x
+#
+# myclass = myNumbers()
+# myIter = iter(myclass)
+#
+# print(next(myIter))
+# print(next(myIter))
+# print(next(myIter))
+# print(next(myIter))
+
+# class MyNumbers:
+#   def __iter__(self):
+#     self.a = 1
+#     return self
+#
+#   def __next__(self):
+#     if self.a <= 20:
+#       x = self.a
+#       self.a += 1
+#       return x
+#     else:
+#       raise StopIteration
+#
+# myclass = MyNumbers()
+# myiter = iter(myclass)
+#
+# for x in myiter:
+#   print(x)
+
+# mytuple = ("apple", "banana", "cherry")     #  len function counting items in tuple, characters in string
+# print(len(mytuple))
+
+# thisdict = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+# print(len(thisdict))
+
+# class Car:
+#     def __init__(self, brand, model):
+#         self.brand = brand
+#         self.model = model
+#
+#     def move(self):
+#         print("Drive!")
+#
+# class Boat:
+#     def __init__(self, brand, model):
+#         self.brand = brand
+#         self.model = model
+#
+#     def move(self):
+#         print("Sail!")
+#
+# class Plane:
+#     def __init__(self, brand, model):
+#         self.brand = brand
+#         self.model = model
+#
+#     def move(self):
+#         print("Fly!")
+#
+# car1 = Car("Ford", "Mustang")
+# boat1 = Boat("Ibiza", "Touring")
+# plane1 = Plane("Boeing" , "747")
+#
+# for x in (car1, boat1, plane1):
+#     x.move()
+
+# class Vehicle:              # inheritance and polymorphism
+#   def __init__(self, brand, model):
+#     self.brand = brand
+#     self.model = model
+#
+#   def move(self):
+#     print("Move!")
+#
+# class Car(Vehicle):
+#   pass
+#
+# class Boat(Vehicle):
+#   def move(self):
+#     print("Sail!")
+#
+# class Plane(Vehicle):
+#   def move(self):
+#     print("Fly!")
+#
+# car1 = Car("Ford", "Mustang") #Create a Car object
+# boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+# plane1 = Plane("Boeing", "747") #Create a Plane object
+#
+# for x in (car1, boat1, plane1):
+#   print(x.brand)
+#   print(x.model)
+#   x.move()
+
+# def myfunc():   # local scope of variable
+#   x = 300
+#   print(x)
+# myfunc()
+
+# def myfunc():
+#   x = 300
+#   def myinnerfunc():
+#     print(x)
+#   myinnerfunc()
+# myfunc()
+
+# x = 300     #   global scope of variable
+# def myFUnction():
+#     print(x)
+# myFUnction()
+
+# x = 300
+# def myfunc():
+#   x = 200
+#   print(x)
+# myfunc()
+# print(x)
 
